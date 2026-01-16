@@ -6,8 +6,6 @@ SOURCE_DIR=`pwd`
 BUILD_DIR=${BUILD_DIR:-../build}
 BUILD_TYPE=${BUILD_TYPE:-Debug}
 INSTALL_DIR=${INSTALL_DIR:-../${BUILD_TYPE}-install-cpp23}
-# CXX=${CXX:-/grid/common/pkgs/gcc/v15.2.0/bin/g++}
-# C=${C:-/grid/common/pkgs/gcc/v15.2.0/bin/gcc}
 
 ln -sf $BUILD_DIR/$BUILD_TYPE-cpp23/compile_commands.json
 
