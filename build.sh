@@ -6,8 +6,8 @@ SOURCE_DIR=`pwd`
 BUILD_DIR=${BUILD_DIR:-../build}
 BUILD_TYPE=${BUILD_TYPE:-Debug}
 INSTALL_DIR=${INSTALL_DIR:-../${BUILD_TYPE}-install-cpp23}
-CXX=${CXX:-/grid/common/pkgs/gcc/v15.2.0/bin/g++}
-C=${C:-/grid/common/pkgs/gcc/v15.2.0/bin/gcc}
+# CXX=${CXX:-/grid/common/pkgs/gcc/v15.2.0/bin/g++}
+# C=${C:-/grid/common/pkgs/gcc/v15.2.0/bin/gcc}
 
 ln -sf $BUILD_DIR/$BUILD_TYPE-cpp23/compile_commands.json
 
@@ -17,10 +17,6 @@ mkdir -p $BUILD_DIR/$BUILD_TYPE-cpp23 \
            -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
            -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR \
            -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
-           -DCMAKE_C_COMPILER=$C \
-           -DCMAKE_CXX_COMPILER=$CXX \
-           -DLIBSTDCPP_DIR=/grid/common/pkgsData/gcc-v15.2.0/Linux/RHEL8.0-2019-x86_64/lib64 \
-           -DLIBSTDCPP_DIR=/grid/common/pkgsData/gcc-v15.2.0/Linux/RHEL8.0-2019-x86_64/lib64 \
            $SOURCE_DIR \
     && make $*
 
